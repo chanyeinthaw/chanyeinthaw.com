@@ -31,29 +31,32 @@ export default function NavigationBar() {
         }
     }, [])
 
-    return <StyledBox hidden={hidden} scrolled={scrolled} >
+    return <StyledBox hidden={hidden} scrolled={'' + scrolled} >
         <img src={logo} onMouseOut={() => setLogo(OutlinedLogo)} onMouseOver={() => setLogo(OutlineFilledHoverLogo)} alt={'logo'} />
-        <NavMenuItem>
-            <Typography color={'text.hint'} variant={'body2'}>01.</Typography>
-            <Typography color={'text.primary'} variant={'body2'}>About</Typography>
-        </NavMenuItem>
 
-        <NavMenuItem>
-            <Typography color={'text.hint'} variant={'body2'}>02.</Typography>
-            <Typography color={'text.primary'} variant={'body2'}>Experience</Typography>
-        </NavMenuItem>
+        <div>
+            <NavMenuItem>
+                <Typography color={'text.hint'} variant={'body2'}>01.</Typography>
+                <Typography color={'text.primary'} variant={'body2'}>About</Typography>
+            </NavMenuItem>
 
-        <NavMenuItem>
-            <Typography color={'text.hint'} variant={'body2'}>03.</Typography>
-            <Typography color={'text.primary'} variant={'body2'}>Work</Typography>
-        </NavMenuItem>
+            <NavMenuItem>
+                <Typography color={'text.hint'} variant={'body2'}>02.</Typography>
+                <Typography color={'text.primary'} variant={'body2'}>Experience</Typography>
+            </NavMenuItem>
 
-        <NavMenuItem>
-            <Typography color={'text.hint'} variant={'body2'}>04.</Typography>
-            <Typography color={'text.primary'} variant={'body2'}>Contact</Typography>
-        </NavMenuItem>
+            <NavMenuItem>
+                <Typography color={'text.hint'} variant={'body2'}>03.</Typography>
+                <Typography color={'text.primary'} variant={'body2'}>Work</Typography>
+            </NavMenuItem>
 
-        <Button className={'resume'} sx={{ padding: '8px 16px' }} variant={'outlined'} size={'small'}>Resume</Button>
+            <NavMenuItem>
+                <Typography color={'text.hint'} variant={'body2'}>04.</Typography>
+                <Typography color={'text.primary'} variant={'body2'}>Contact</Typography>
+            </NavMenuItem>
+
+            <Button sx={{ padding: '8px 16px' }} variant={'outlined'} size={'small'}>Resume</Button>
+        </div>
         <IconButton className={'menu'}>
             <MenuOutlined />
         </IconButton>
@@ -79,25 +82,35 @@ const NavMenuItem = styled('a')((props) => ({
 }))
 
 const StyledBox = styled('nav')((props) => ({
-    display: 'grid',
-    gridTemplateColumns: '1fr repeat(5, max-content)',
-    gap: 16,
+    boxSizing: 'border-box',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
     alignContent: 'center',
-    height: '46px',
+    height: props?.scrolled === 'true' ? 70 : 100,
 
     transition: 'all 300ms ease',
 
-    position: 'sticky',
+    position: 'fixed',
+    width: '100%',
     background: props.theme.palette.primaryAlpha.main,
-    top: props?.hidden ? `-78px` : 0,
+    top: props?.hidden ? `-70px` : 0,
 
-    padding: '16px 48px',
-    paddingTop: props?.scrolled ? '16px': '24px',
+    padding: '0 48px',
 
-    ...( props?.scrolled ? {
+    ...( props?.scrolled === 'true' ? {
         boxShadow: `0 10px 30px -10px rgba(2,12,27,0.7)`,
         backdropFilter: 'blur(10px)'
     } : {}),
+
+    '& > div': {
+        gap: 16,
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'flex-end',
+        alignItems: 'center'
+    },
 
     '& > img': { width: 40, height: 40, cursor: 'pointer' },
 
@@ -108,7 +121,7 @@ const StyledBox = styled('nav')((props) => ({
     [props.theme.breakpoints.down('md')]: {
         gridTemplateColumns: `max-content max-content`,
         justifyContent: 'space-between',
-        '& > a, & > button.resume': {
+        '& > div': {
             display: 'none'
         },
 
