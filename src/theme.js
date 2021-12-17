@@ -12,7 +12,11 @@ export const themeOptions = {
             disabled: 'rgb(136, 146, 176)',
         },
         background: {default: 'rgb(10, 25, 47)', paper: 'rgb(17, 34, 64)',},
+        primaryAlpha: { main: 'rgba(10, 25, 47, 0.85)' }
     },
+    typography: {
+        fontFamily: 'Inter, sans-serif'
+    }
 };
 
 const componentStyles = {
