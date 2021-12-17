@@ -28,8 +28,8 @@ export default function Introduction() {
                 I build things for the web.
             </Typography>
             <Typography variant={'body1'} color={'text.secondary'}>
-                I’m a software engineer specializing in back-end development. Currently, I’m building APIs and web applications at &nbsp;
-                <Link variant={'body1'} color={'text.hint'} sx={{ textDecoration: 'underline'}}>One Terrace</Link>.
+                I’m a software engineer specializing in back-end development. Currently, I’m building APIs and web applications at&nbsp;
+                <Link variant={'body1'} color={'text.hint'} sx={{ textDecoration: 'underline'}}>Pyxis Technologies</Link>.
             </Typography>
         </Section>
     )
