@@ -1,23 +1,23 @@
 import {Link, styled, Typography} from "@mui/material";
 import StyledSection from '../../styled-components/Section'
-import {useEffect, useRef} from "react";
 
 export default function Introduction() {
-    let section = useRef()
+    // let section = useRef()
 
-    useEffect(() => {
-        let timeout = 200
-        section.current?.childNodes.forEach(child => {
-            setTimeout(() => {
-                child.classList.add('fade-in')
-            }, timeout)
-
-            timeout += 200
-        })
-    }, [])
+    // useEffect(() => {
+    //     let timeout = 200
+    //     section.current?.childNodes.forEach(child => {
+    //         setTimeout(() => {
+    //             child.classList.add('fade-in')
+    //             child.style.visibility = 'visible'
+    //         }, timeout)
+    //
+    //         timeout += 200
+    //     })
+    // }, [])
 
     return (
-        <Section ref={section}>
+        <Section>
             <Typography variant={'body1'} color={'text.hint'}>
                 Hi, my name is
             </Typography>
@@ -41,7 +41,7 @@ let Section = styled(StyledSection)({
 
     '& a': { textDecoration: 'none', cursor: 'pointer' },
 
-    '& > *': { opacity: 0 },
+    // '& > *': { visibility: 'hidden' },
 
     '& > *:nth-of-type(2)': {
         fontWeight: 600,

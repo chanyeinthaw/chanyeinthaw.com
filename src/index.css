@@ -23,16 +23,15 @@ section {
   min-height: 100vh;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0
-  }
-  to {
-    opacity: 1
-  }
-}
+/*@keyframes fadeIn {*/
+/*  from {*/
+/*    opacity: 0*/
+/*  }*/
+/*  to {*/
+/*    opacity: 1*/
+/*  }*/
+/*}*/
 
-.fade-in {
-  animation: fadeIn 3000ms;
-  animation-fill-mode: forwards;
-}
+/*.fade-in {*/
+/*  animation: fadeIn 3000ms;*/
+/*}*/
