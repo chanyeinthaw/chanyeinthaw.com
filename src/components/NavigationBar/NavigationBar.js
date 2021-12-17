@@ -1,7 +1,8 @@
-import {Button, styled, Typography} from "@mui/material";
+import {Button, IconButton, styled, Typography} from "@mui/material";
 import OutlinedLogo from '../../logos/outlined.svg'
 import OutlineFilledHoverLogo from '../../logos/outline-filled-hover.svg'
 import {useEffect, useMemo, useState} from "react";
+import {MenuOutlined} from "@mui/icons-material";
 
 export default function NavigationBar() {
     let [logo, setLogo] = useState(OutlinedLogo)
@@ -52,7 +53,10 @@ export default function NavigationBar() {
             <Typography color={'text.primary'} variant={'body2'}>Contact</Typography>
         </NavMenuItem>
 
-        <Button sx={{ padding: '8px 16px' }} variant={'outlined'} size={'small'}>Resume</Button>
+        <Button className={'resume'} sx={{ padding: '8px 16px' }} variant={'outlined'} size={'small'}>Resume</Button>
+        <IconButton className={'menu'}>
+            <MenuOutlined />
+        </IconButton>
     </StyledBox>
 }
 
@@ -63,6 +67,11 @@ const NavMenuItem = styled('a')((props) => ({
     alignItems: 'center',
     cursor: 'pointer',
     gap: 4,
+    padding: '8px 8px',
+
+    '& > p': {
+        fontFamily: '"Fira Code", sans-serif'
+    },
 
     '&:hover > .MuiTypography-body2:last-child': {
         color: props.theme.palette.text.hint
@@ -72,7 +81,7 @@ const NavMenuItem = styled('a')((props) => ({
 const StyledBox = styled('nav')((props) => ({
     display: 'grid',
     gridTemplateColumns: '1fr repeat(5, max-content)',
-    gap: 32,
+    gap: 16,
     alignContent: 'center',
     height: '46px',
 
@@ -90,5 +99,22 @@ const StyledBox = styled('nav')((props) => ({
         backdropFilter: 'blur(10px)'
     } : {}),
 
-    '& > img': { width: 40, height: 40, cursor: 'pointer' }
+    '& > img': { width: 40, height: 40, cursor: 'pointer' },
+
+    '& button.menu': {
+        display: 'none'
+    },
+
+    [props.theme.breakpoints.down('md')]: {
+        gridTemplateColumns: `max-content max-content`,
+        justifyContent: 'space-between',
+        '& > a, & > button.resume': {
+            display: 'none'
+        },
+
+        '& > button.menu': {
+            display: 'flex',
+            color: props.theme.palette.text.hint,
+        }
+    }
 }))
