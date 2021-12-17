@@ -121,6 +121,8 @@ const StyledBox = styled('nav')((props) => ({
     [props.theme.breakpoints.down('md')]: {
         gridTemplateColumns: `max-content max-content`,
         justifyContent: 'space-between',
+        padding: '0 25px',
+
         '& > div': {
             display: 'none'
         },
