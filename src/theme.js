@@ -15,7 +15,7 @@ export const themeOptions = {
         primaryAlpha: { main: 'rgba(10, 25, 47, 0.85)' }
     },
     typography: {
-        fontFamily: 'Inter, sans-serif'
+        fontFamily: 'Inter, "Fira Code", sans-serif'
     }
 };
 
@@ -34,6 +34,7 @@ const componentStyles = {
                     borderColor: themeOptions.palette.text.hint,
                     color: themeOptions.palette.text.hint,
                     textTransform: 'none',
+                    fontFamily: '"Fira Code", sans-serif',
 
                     '&:hover': {
                         borderColor: themeOptions.palette.text.hint,
