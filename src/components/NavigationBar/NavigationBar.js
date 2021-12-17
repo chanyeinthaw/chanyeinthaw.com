@@ -95,13 +95,13 @@ const StyledBox = styled('nav')((props) => ({
     position: 'fixed',
     width: '100%',
     background: props.theme.palette.primaryAlpha.main,
+    backdropFilter: 'blur(10px)',
     top: props?.hidden ? `-70px` : 0,
 
     padding: '0 48px',
 
     ...( props?.scrolled === 'true' ? {
         boxShadow: `0 10px 30px -10px rgba(2,12,27,0.7)`,
-        backdropFilter: 'blur(10px)'
     } : {}),
 
     '& > div': {
