@@ -29,7 +29,7 @@ export default function Introduction() {
             </Typography>
             <Typography variant={'body1'} color={'text.secondary'}>
                 I’m a software engineer specializing in back-end development. Currently, I’m building APIs and web applications at&nbsp;
-                <Link variant={'body1'} color={'text.hint'} sx={{ textDecoration: 'underline'}}>Pyxis Technologies</Link>.
+                <Link variant={'body1'} color={'text.hint'} >Pyxis Technologies.</Link>
             </Typography>
         </Section>
     )
@@ -38,8 +38,6 @@ export default function Introduction() {
 let Section = styled(StyledSection)({
     gridAutoFlow: 'row',
     alignContent: 'center',
-
-    '& a': { textDecoration: 'none', cursor: 'pointer' },
 
     // '& > *': { visibility: 'hidden' },
 
