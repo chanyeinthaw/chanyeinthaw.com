@@ -27,6 +27,43 @@ section {
   min-height: 100vh;
 }
 
+#diamond {
+  stroke-dasharray: 1397;
+  stroke-dashoffset: 1397;
+  animation: diamond 1s ease;
+  animation-fill-mode: forwards;
+}
+
+#logo-l {
+  animation: logo-l 200ms ease;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+}
+
+#logo-c {
+  opacity: 0;
+  animation: logo-c 1s ease;
+  animation-fill-mode: forwards;
+}
+
+@keyframes logo-l  {
+  to {
+    transform: scale(0, 0);
+  }
+}
+
+@keyframes logo-c {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes diamond {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
 /*@keyframes fadeIn {*/
 /*  from {*/
 /*    opacity: 0*/
