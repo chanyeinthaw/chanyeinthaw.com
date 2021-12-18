@@ -5,6 +5,9 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {theme} from "./theme";
 import {ThemeProvider} from "@mui/material";
+import smooth from 'smoothscroll-polyfill';
+
+smooth.polyfill()
 
 ReactDOM.render(
   <React.StrictMode>

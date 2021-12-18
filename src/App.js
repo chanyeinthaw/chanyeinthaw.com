@@ -15,7 +15,7 @@ function App() {
     useEffect(() => {
         let section = window.location.hash
         if (section) {
-            sections[section].current?.scrollIntoView()
+            setTimeout(() => sections[section].current?.scrollIntoView({ behavior: 'smooth' }), 500)
         }
     }, [])
     return (

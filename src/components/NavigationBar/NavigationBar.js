@@ -21,7 +21,7 @@ export default function NavigationBar({ sections }) {
     let onNavigate = event => {
         let url = new URL(event.currentTarget.href)
 
-        sections[url.hash]?.current?.scrollIntoView()
+        sections[url.hash]?.current?.scrollIntoView({ behavior: 'smooth' })
     }
 
     let scrolled = useMemo(() => scrollY.current > 0, [ scrollY])
