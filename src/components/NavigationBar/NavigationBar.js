@@ -4,7 +4,7 @@ import OutlineFilledHoverLogo from '../../logos/outline-filled-hover.svg'
 import {useEffect, useMemo, useState} from "react";
 import {MenuOutlined} from "@mui/icons-material";
 
-export default function NavigationBar() {
+export default function NavigationBar({ sections }) {
     let [logo, setLogo] = useState(OutlinedLogo)
     let [ scrollY, setScrollY ] = useState({
         prev: 0,
@@ -16,6 +16,12 @@ export default function NavigationBar() {
             prev: old.current,
             current: window.scrollY
         }))
+    }
+
+    let onNavigate = event => {
+        let url = new URL(event.currentTarget.href)
+
+        sections[url.hash]?.current?.scrollIntoView()
     }
 
     let scrolled = useMemo(() => scrollY.current > 0, [ scrollY])
@@ -35,22 +41,22 @@ export default function NavigationBar() {
         <img src={logo} onMouseOut={() => setLogo(OutlinedLogo)} onMouseOver={() => setLogo(OutlineFilledHoverLogo)} alt={'logo'} />
 
         <div>
-            <NavMenuItem>
+            <NavMenuItem href={'#about'} onClick={onNavigate}>
                 <Typography color={'text.hint'} variant={'body2'}>01.</Typography>
                 <Typography color={'text.primary'} variant={'body2'}>About</Typography>
             </NavMenuItem>
 
-            <NavMenuItem>
+            <NavMenuItem href={'#experience'} onClick={onNavigate}>
                 <Typography color={'text.hint'} variant={'body2'}>02.</Typography>
                 <Typography color={'text.primary'} variant={'body2'}>Experience</Typography>
             </NavMenuItem>
 
-            <NavMenuItem>
+            <NavMenuItem href={'#work'} onClick={onNavigate}>
                 <Typography color={'text.hint'} variant={'body2'}>03.</Typography>
                 <Typography color={'text.primary'} variant={'body2'}>Work</Typography>
             </NavMenuItem>
 
-            <NavMenuItem>
+            <NavMenuItem href={'#contact'} onClick={onNavigate}>
                 <Typography color={'text.hint'} variant={'body2'}>04.</Typography>
                 <Typography color={'text.primary'} variant={'body2'}>Contact</Typography>
             </NavMenuItem>
@@ -64,6 +70,7 @@ export default function NavigationBar() {
 }
 
 const NavMenuItem = styled('a')((props) => ({
+    textDecoration: 'none',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
