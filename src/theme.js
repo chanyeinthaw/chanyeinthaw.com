@@ -28,6 +28,29 @@ const componentStyles = {
                 }
             }
         },
+        MuiLink: {
+            styleOverrides: {
+                root: {
+                    color: themeOptions.palette.text.hint,
+                    textDecoration: 'none',
+                    cursor: 'pointer',
+                    display: 'inline-block',
+
+                    '&:hover:after, &active:after': {
+                        width: '100%'
+                    },
+
+                    '&:after': {
+                        content: '""',
+                        display: 'block',
+                        height: 1,
+                        background: themeOptions.palette.text.hint,
+                        width: 0,
+                        transition: 'width 200ms linear'
+                    }
+                }
+            }
+        },
         MuiButton: {
             styleOverrides: {
                 root: {
