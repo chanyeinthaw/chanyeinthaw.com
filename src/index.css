@@ -9,6 +9,10 @@ body {
   font-feature-settings: 'pnum' on, 'lnum' on, 'zero' on, 'salt' on, 'ss01' on, 'ss02' on, 'ss04' on, 'cv01' on, 'cv02' on, 'cv03' on, 'cv04' on, 'cv05' on, 'cv06' on, 'cv07' on, 'cv08' on, 'cv09' on, 'cv10' on, 'cv11' on;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   box-sizing: border-box;
 }
