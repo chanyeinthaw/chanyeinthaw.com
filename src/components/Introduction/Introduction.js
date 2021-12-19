@@ -43,14 +43,14 @@ let Section = styled(StyledSection)({
 
     '& > *:nth-of-type(2)': {
         fontWeight: 600,
-        fontSize: 'clamp(40px, 8vw, 80px)',
+        fontSize: 'clamp(40px, 6vw, 80px)',
         lineHeight: 1.1
     },
 
     '& > *:nth-of-type(3)': {
         marginTop: 10,
         fontWeight: 600,
-        fontSize: 'clamp(40px, 6vw, 80px)',
+        fontSize: 'clamp(40px, 5vw, 80px)',
         lineHeight: .9
     },
 
