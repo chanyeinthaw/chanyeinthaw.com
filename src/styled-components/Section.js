@@ -6,7 +6,7 @@ const Section = styled('section')(props => ({
 
     [props.theme.breakpoints.down('xl')]: {
         padding: '0 100px',
-        margin: '0 70px'
+        margin: '0 120px'
     },
 
     [props.theme.breakpoints.down('lg')]: {

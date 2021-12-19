@@ -89,36 +89,40 @@ const ImageArea = styled('div')( props => ({
     justifySelf: 'center',
     justifyContent: 'center',
 
-    width: 330,
-
     '& img': {
-        width: 300,
-        height: 300,
+        width: 500,
+        height: 500,
         borderRadius: 4,
 
         '&:hover': {
             boxShadow: `2px 2px 8px 4px rgba(2,12,27,0.7)`
-        }
-    },
+        },
 
-    [props.theme.breakpoints.down('md')]: {
-        width: 270,
-        '& img': {
+        [props.theme.breakpoints.down('xl')]: {
+            width: 300,
+            height: 300
+        },
+
+        [props.theme.breakpoints.down('md')]: {
             width: 240,
             height: 240
+        },
+
+        [props.theme.breakpoints.down('sm')]: {
+            width: 270,
+            height: 270
+        },
+
+        [props.theme.breakpoints.down('xs')]: {
+            width: 200,
+            height: 200
         }
     },
 
     [props.theme.breakpoints.down('sm')]: {
         marginTop: 32,
         gridArea: 'unset',
-
-        width: 250,
-        '& img': {
-            width: 200,
-            height: 200
-        }
-    }
+    },
 }))
 
 const AboutArea = styled('div')( props => ({
