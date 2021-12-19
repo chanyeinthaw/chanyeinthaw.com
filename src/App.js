@@ -3,6 +3,7 @@ import Introduction from "./components/Introduction/Introduction";
 import {styled} from "@mui/material";
 import About from "./components/About/About";
 import React, {useEffect, useRef, useState} from "react";
+import Footer from "./components/Footer/Footer";
 
 function App() {
     const sections = {
@@ -40,13 +41,14 @@ function App() {
             <NavigationBar sections={sections} />
             <Introduction />
             <About ref={sections['#about']} />
+            <Footer />
         </Main>
     )
 }
 
 const Main = styled('main')({
     display: 'flex',
-    flexDirection: 'column'
+    flexDirection: 'column',
 })
 
 const LogoPage = styled('main')({
