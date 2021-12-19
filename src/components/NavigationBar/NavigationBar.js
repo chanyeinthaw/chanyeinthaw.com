@@ -1,4 +1,4 @@
-import {Button, IconButton, styled, Typography} from "@mui/material";
+import {Link, Button, IconButton, styled, Typography} from "@mui/material";
 import OutlinedLogo from '../../logos/outlined.svg'
 import OutlineFilledHoverLogo from '../../logos/outline-filled-hover.svg'
 import {useEffect, useMemo, useState} from "react";
@@ -38,7 +38,9 @@ export default function NavigationBar({ sections }) {
     }, [])
 
     return <StyledBox hidden={hidden} scrolled={'' + scrolled} >
-        <img src={logo} onMouseOut={() => setLogo(OutlinedLogo)} onMouseOver={() => setLogo(OutlineFilledHoverLogo)} alt={'logo'} />
+        <Link href={'.'}>
+            <img src={logo} onMouseOut={() => setLogo(OutlinedLogo)} onMouseOver={() => setLogo(OutlineFilledHoverLogo)} alt={'logo'} />
+        </Link>
 
         <div>
             <NavMenuItem href={'#about'} onClick={onNavigate}>
@@ -119,7 +121,13 @@ const StyledBox = styled('nav')((props) => ({
         alignItems: 'center'
     },
 
-    '& > img': { width: 40, height: 40, cursor: 'pointer' },
+    '& > a:first-of-type': {
+        width: 40, height: 40 ,
+        '&:after': {
+            display: 'none'
+        }
+    },
+    '& > a > img': { width: 40, height: 40 },
 
     '& button.menu': {
         display: 'none'
