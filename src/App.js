@@ -18,7 +18,7 @@ function App() {
     useEffect(() => {
         setTimeout(() => {
             setShowLogo(false)
-        }, 1200)
+        }, 2200)
     }, [])
 
     useEffect(() => {

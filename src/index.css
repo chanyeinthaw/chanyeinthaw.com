@@ -36,13 +36,14 @@ section {
 
 #logo-l {
   animation: logo-l 200ms ease;
-  animation-delay: 1s;
+  animation-delay: 2s;
   animation-fill-mode: forwards;
 }
 
 #logo-c {
   opacity: 0;
   animation: logo-c 1s ease;
+  animation-delay: 1s;
   animation-fill-mode: forwards;
 }
 
