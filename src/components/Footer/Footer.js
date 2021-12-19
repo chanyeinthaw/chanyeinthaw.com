@@ -23,12 +23,12 @@ export default function Footer() {
                 <MailOutline fontSize={'medium'} />
             </Link>
         </div>
-        <Link variant={'caption'} href={'https://brittanychiang.com/'}>
+        <Link variant={'caption'} href={'https://brittanychiang.com/'} target={'_blank'}>
             Designed inspired from Brittany Chiang
         </Link>
-        <Typography variant={'caption'} >
+        <Link href='.' variant={'caption'} >
             Built by Chan Nyein Thaw
-        </Typography>
+        </Link>
     </Section>
 }
 
@@ -40,7 +40,7 @@ const Section = styled(StyledSection)(props => ({
     paddingTop: '16px !important',
     paddingBottom: '24px !important',
 
-    '& a, & span': {
+    '& a': {
         textAlign: 'center',
         userSelect: 'none',
         color: `${props.theme.palette.text.secondary} !important`,
